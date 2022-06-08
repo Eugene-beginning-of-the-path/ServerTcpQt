@@ -18,9 +18,9 @@ public:
        void sendToClient(QString messageToClient); //foonction for send some data to Client
 
 public slots:
-       void incomingConnection(qintptr socketDescription); //handler for new connection
-       void slotReadyRead(); //handler for ready reciving a message from Client
-
+       void incomingConnection(qintptr socketDescription); //handler for new connection (QTcpServer's)
+       void slotReadyRead(); //handler for socket ready receving a message from Client
+       void slotDisconnect(); //just for disconnect Client's socket
 
 
 };
