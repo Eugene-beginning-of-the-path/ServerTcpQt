@@ -197,6 +197,10 @@ release/moc_Server.cpp: ../ServerConsoleQt/Server.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/qvariant.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QVector \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/qvector.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/QTime \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qlocale.h \
 		release/moc_predefs.h \
 		../../../../Qt/6.2.4/mingw_64/bin/moc.exe
 	D:\Qt\6.2.4\mingw_64\bin\moc.exe $(DEFINES) --include D:/Programming/QtCodding/ServerQt/build-ServerConsoleQt-Desktop_Qt_6_2_4_MinGW_64_bit-Debug/release/moc_predefs.h -ID:/Qt/6.2.4/mingw_64/mkspecs/win32-g++ -ID:/Programming/QtCodding/ServerQt/ServerConsoleQt -ID:/Qt/6.2.4/mingw_64/include -ID:/Qt/6.2.4/mingw_64/include/QtNetwork -ID:/Qt/6.2.4/mingw_64/include/QtCore -I. -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -ID:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -ID:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\ServerConsoleQt\Server.h -o release\moc_Server.cpp
@@ -305,7 +309,11 @@ release/Server.o: ../ServerConsoleQt/Server.cpp ../ServerConsoleQt/Server.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtNetwork/qtcpsocket.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/qvariant.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QVector \
-		../../../../Qt/6.2.4/mingw_64/include/QtCore/qvector.h
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qvector.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/QTime \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qlocale.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\Server.o ..\ServerConsoleQt\Server.cpp
 
 release/main.o: ../ServerConsoleQt/main.cpp ../../../../Qt/6.2.4/mingw_64/include/QtCore/QCoreApplication \
@@ -414,7 +422,11 @@ release/main.o: ../ServerConsoleQt/main.cpp ../../../../Qt/6.2.4/mingw_64/includ
 		../../../../Qt/6.2.4/mingw_64/include/QtNetwork/QTcpSocket \
 		../../../../Qt/6.2.4/mingw_64/include/QtNetwork/qtcpsocket.h \
 		../../../../Qt/6.2.4/mingw_64/include/QtCore/QVector \
-		../../../../Qt/6.2.4/mingw_64/include/QtCore/qvector.h
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qvector.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/QTime \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qdatetime.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qcalendar.h \
+		../../../../Qt/6.2.4/mingw_64/include/QtCore/qlocale.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o ..\ServerConsoleQt\main.cpp
 
 release/moc_Server.o: release/moc_Server.cpp 

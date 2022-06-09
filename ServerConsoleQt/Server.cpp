@@ -4,9 +4,14 @@ Server::Server()
 {
     //the server is listening a signal from any address and work in port number 2323
     if (this->listen(QHostAddress::Any, 2323))
-        qDebug() << "Server is successfully turned on and listens requests for connection";
+        qDebug().noquote() << QTime::currentTime().toString()
+                 << " Server is successfully turned on and listens requests for connection...";
     else
-        qDebug() << "Error: Server is not turned on";
+        qDebug().noquote() << QTime::currentTime().toString() << " Error: Server is not turned on";
+
+    /*about qDebug():
+    .noquote() - disables automatic insertion of quotation characters around
+    .nospace() - Disables automatic insertion of spaces*/
 }
 
 void Server::incomingConnection(qintptr socketDescription)
@@ -18,10 +23,8 @@ void Server::incomingConnection(qintptr socketDescription)
     connect(socket, &QTcpSocket::disconnected, this, &Server::slotDisconnect);
 
     vectorSockets.push_back(socket);
-    qDebug() << "Client connected with Descriptor# " << socketDescription;
-
-    //sendToClient("A message from Server to Client"); //send information about successful connection to Server
-
+    qDebug().noquote().nospace() << QTime::currentTime().toString() << "  Client connected with Descriptor #"
+                                 << socketDescription;
 }
 
 void Server::slotReadyRead()
@@ -31,30 +34,49 @@ void Server::slotReadyRead()
     in.setVersion(QDataStream::Qt_6_2); //specify the version of Qt
     if (in.status() == QDataStream::Ok)
     {
-        qDebug() << "Reading a data from Client...";
+        qDebug().noquote().nospace() << QTime::currentTime().toString()
+                 << "  Reading a data from Client(#" << socket->socketDescriptor() << ')';
         QString message;
         in >> message;
-        qDebug() << "Recived the message from Client: " << message;
+        qDebug().noquote().nospace() << QTime::currentTime().toString() << "  Recived the message from Client(#"
+                 << socket->socketDescriptor() << "): "<< message;
+
         sendToClient(message);
     }
     else
-        qDebug() << "Error: Con not read a data from Client";
+        qDebug().noquote().nospace() << "  Error: Con not read a data from Client(#"
+                                     << socket->socketDescriptor() << ')';
 }
 
 void Server::slotDisconnect()
 {
-    //qDebug() << "Disconnection. Descriptor# " << socket->socketDescriptor();
+    qDebug().noquote().nospace() << QTime::currentTime().toString()
+                                 << "  Someone disconnection"; //The descriptors remained:
+//    if (vectorSockets.size() < 2)
+//        qDebug().noquote() << "  Empty";
+
+    for (int i = 0; i < vectorSockets.size(); i++)
+    {
+        if (vectorSockets[i]->socketDescriptor() == (qintptr)-1)
+            continue;
+        qDebug().noquote() << vectorSockets[i]->socketDescriptor() << "; ";
+    }
+
+
     socket->deleteLater(); //if the first opportunity, application will delete our socket
 }
 
 void Server::sendToClient(QString messageToClient)
 {
-    data.clear();
+    data.clear(); //even in a empty variable there is garbage, so we need to clear its
     QDataStream out(&data, QIODevice::WriteOnly); //variable for convert our message to QByteArray and send Client
     out.setVersion(QDataStream::Qt_6_2);
-    out << messageToClient; //write messageToClient to QByteArray via object out
-    //socket->write(data); //write our QByteArray in socket
+    out  << QTime::currentTime() << messageToClient; //write messageToClient to QByteArray via object out
     for (int i = 0; i < vectorSockets.size(); i++)
-        vectorSockets[i]->write(data);
+        vectorSockets[i]->write(data); //write our QByteArray in sockets
+
+    qDebug().noquote() << QTime::currentTime().toString() << " The message sent to the clients: ";
+    for (int i = 0; i < vectorSockets.size(); i++)
+        qDebug().noquote() << vectorSockets[i]->socketDescriptor() << "; ";
 }
 
