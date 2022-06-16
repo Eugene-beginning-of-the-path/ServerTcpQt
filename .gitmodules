@@ -1,0 +1,3 @@
+[submodule "ClientQt"]
+	path = ClientQt
+	url = https://github.com/Eugene-beginning-of-the-path/ClientQt

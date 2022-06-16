@@ -74,6 +74,14 @@ void Server::sendToClient(QString messageToClient)
     out  << QTime::currentTime() << messageToClient; //write messageToClient to QByteArray via object out
     for (int i = 0; i < vectorSockets.size(); i++)
         vectorSockets[i]->write(data); //write our QByteArray in sockets
+<<<<<<< HEAD
+=======
+
+    qDebug().noquote() << QTime::currentTime().toString() << " The message sent to the clients: ";
+    for (int i = 0; i < vectorSockets.size(); i++)
+        qDebug().noquote() << vectorSockets[i]->socketDescriptor() << "; ";
+}
+>>>>>>> master
 
     qDebug().noquote() << QTime::currentTime().toString() << " The message sent to the clients: ";
     for (int i = 0; i < vectorSockets.size(); i++)
