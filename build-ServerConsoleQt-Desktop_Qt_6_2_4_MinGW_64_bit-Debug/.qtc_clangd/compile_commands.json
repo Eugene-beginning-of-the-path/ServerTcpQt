@@ -9,11 +9,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-<<<<<<< HEAD
-        "C:\\Users\\Eugene\\AppData\\Local\\Temp\\QtCreator-ZuwKuA\\clang-uiheader-CUuOMk",
-=======
-        "C:\\Users\\Eugene\\AppData\\Local\\Temp\\QtCreator-eXsIKI\\clang-uiheader-kuEPjq",
->>>>>>> master
+        "C:\\Users\\Eugene\\AppData\\Local\\Temp\\QtCreator-tpumul\\clang-uiheader-uhiekq",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -84,11 +80,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-<<<<<<< HEAD
-        "C:\\Users\\Eugene\\AppData\\Local\\Temp\\QtCreator-ZuwKuA\\clang-uiheader-CUuOMk",
-=======
-        "C:\\Users\\Eugene\\AppData\\Local\\Temp\\QtCreator-eXsIKI\\clang-uiheader-kuEPjq",
->>>>>>> master
+        "C:\\Users\\Eugene\\AppData\\Local\\Temp\\QtCreator-tpumul\\clang-uiheader-uhiekq",
         "-nostdinc",
         "-nostdinc++",
         "-g",
@@ -159,11 +151,7 @@
         "-I",
         "D:\\Qt\\Tools\\QtCreator\\share\\qtcreator\\cplusplus\\wrappedQtHeaders\\QtCore",
         "-I",
-<<<<<<< HEAD
-        "C:\\Users\\Eugene\\AppData\\Local\\Temp\\QtCreator-ZuwKuA\\clang-uiheader-CUuOMk",
-=======
-        "C:\\Users\\Eugene\\AppData\\Local\\Temp\\QtCreator-eXsIKI\\clang-uiheader-kuEPjq",
->>>>>>> master
+        "C:\\Users\\Eugene\\AppData\\Local\\Temp\\QtCreator-tpumul\\clang-uiheader-uhiekq",
         "-nostdinc",
         "-nostdinc++",
         "-g",

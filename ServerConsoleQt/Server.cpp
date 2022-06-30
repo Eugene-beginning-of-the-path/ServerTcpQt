@@ -41,6 +41,10 @@ void Server::slotReadyRead()
         qDebug().noquote().nospace() << QTime::currentTime().toString() << "  Recived the message from Client(#"
                  << socket->socketDescriptor() << "): "<< message;
 
+        //Parsing of the received message
+
+        //An entry will be made to the database
+
         sendToClient(message);
     }
     else
@@ -74,14 +78,11 @@ void Server::sendToClient(QString messageToClient)
     out  << QTime::currentTime() << messageToClient; //write messageToClient to QByteArray via object out
     for (int i = 0; i < vectorSockets.size(); i++)
         vectorSockets[i]->write(data); //write our QByteArray in sockets
-<<<<<<< HEAD
-=======
+
 
     qDebug().noquote() << QTime::currentTime().toString() << " The message sent to the clients: ";
     for (int i = 0; i < vectorSockets.size(); i++)
         qDebug().noquote() << vectorSockets[i]->socketDescriptor() << "; ";
-}
->>>>>>> master
 
     qDebug().noquote() << QTime::currentTime().toString() << " The message sent to the clients: ";
     for (int i = 0; i < vectorSockets.size(); i++)
