@@ -13,6 +13,7 @@ public:
        Server(); //when Server is turned on, it is already listening for any connection
        QTcpSocket* socket;
 
+
 public:
        QVector <QTcpSocket*> vectorSockets; //keeping created sockets for work with Clients
        QByteArray data; //this variable will be traveling from Server to Client; from Client to Server

@@ -38,10 +38,43 @@ void Server::slotReadyRead()
                  << "  Reading a data from Client(#" << socket->socketDescriptor() << ')';
         QString message;
         in >> message;
+
         qDebug().noquote().nospace() << QTime::currentTime().toString() << "  Recived the message from Client(#"
                  << socket->socketDescriptor() << "): "<< message;
 
+        QString nicknameFromMessage[10];
+        int lenNickname = 0, lenData = 0;
         //Parsing of the received message
+        int i = 0;
+        while (message[i] != ':')
+        {
+            nicknameFromMessage[i] = message[i];
+            i++;
+            lenNickname++;
+        }
+        i += 2;
+
+        QString dataFromMessage[message.length() - i];
+        int j = 0;
+        qsizetype  lenght = message.length();
+        while (i < lenght)
+        {
+            dataFromMessage[j] = message[i];
+            j++;
+            i++;
+            lenData++;
+        }
+
+        i = 0;
+        j = 0;
+        //lenght = nicknameFromMessage->size();
+        while(i < lenNickname)
+            qDebug().noquote().nospace() << nicknameFromMessage[i++];
+
+        qDebug().noquote().nospace() << "---";
+
+        while(j < lenData)
+            qDebug().noquote().nospace() << dataFromMessage[j++];
 
         //An entry will be made to the database
 
